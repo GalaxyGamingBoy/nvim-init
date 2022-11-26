@@ -61,7 +61,7 @@ call plug#end()
 
 " LSP Initialization
 lua require'lspconfig'.pyright.setup{}
-
+lua require'lspconfig'.tsserver.setup{}
 " Treesitter Initialization
 lua require'nvim-treesitter.configs'.setup { ensure_installed = { "c", "cpp", "css", "go", "html", "javascript", "json", "lua", "markdown", "python", "typescript", "yaml", "vim" } }
 
@@ -129,6 +129,17 @@ vnoremap <silent> <A-j> :MoveBlock(1)<CR>
 vnoremap <silent> <A-k> :MoveBlock(-1)<CR>
 vnoremap <silent> <A-l> :MoveHBlock(1)<CR>
 vnoremap <silent> <A-h> :MoveHBlock(-1)<CR>
+
+" HOP Keymap
+nnoremap <silent> <C-f> :HopLine<CR>
+nnoremap <silent> <C-F> :HopAnywhereCurrentLine<CR>
+nnoremap <silent> <A-f> :HopWord<CR>
+nnoremap <silent> <A-F> :HopWordCurrentLine<CR>
+
+vnoremap <silent> <C-f> :HopLine<CR>
+vnoremap <silent> <C-F> :HopAnywhereCurrentLine<CR>
+vnoremap <silent> <A-f> :HopWord<CR>
+vnoremap <silent> <A-F> :HopWordCurrentLine<CR>
 
 " LUALine Initialization
 lua << END
